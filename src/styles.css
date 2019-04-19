@@ -1,0 +1,33 @@
+.App {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "companies content";
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.SupportForm {
+  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+.SupportForm > *:not(:first-child) {
+  margin-top: 1em;
+}
+
+.CompanyList {
+  grid-area: companies;
+  padding: 0.5em;
+  overflow: auto;
+}
+
+.CompanyList > :not(:first-child) {
+  margin-top: 0.5em;
+}
