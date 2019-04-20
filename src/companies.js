@@ -1,4 +1,4 @@
-import { createSelector } from "reselect";
+import { createSelector, createKeySelector } from "redux-views";
 
 import { initialCompanies } from "./data";
 import { getContacts } from "./contacts";
@@ -6,7 +6,7 @@ import { getContacts } from "./contacts";
 export default (state = initialCompanies, action) => state;
 
 const getCompanies = state => state.companies;
-export const getCompanyId = (state, props) => props.companyId;
+export const getCompanyId = createKeySelector(props => props.companyId);
 
 export const getAllCompanyIds = createSelector(
   getCompanies,

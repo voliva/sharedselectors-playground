@@ -8242,6 +8242,13 @@ recursive-readdir@2.2.2:
   dependencies:
     minimatch "3.0.4"
 
+redux-views@^0.6.1:
+  version "0.6.1"
+  resolved "https://registry.yarnpkg.com/redux-views/-/redux-views-0.6.1.tgz#798e01c5cdabda7c4a1f4589296c3ed26121c8f5"
+  integrity sha512-+Y/EoXqIPn7S4JQLInEzXWVkTHzKbfN6PjOU7WfP+MTQwYU6VG11dejfp+73L/WcEc6/otDyQBujs5NPk3ytlw==
+  dependencies:
+    loose-envify "^1.1.0"
+
 redux@4.0.1:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/redux/-/redux-4.0.1.tgz#436cae6cc40fbe4727689d7c8fae44808f1bfef5"
@@ -8467,11 +8474,6 @@ requires-port@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/requires-port/-/requires-port-1.0.0.tgz#925d2601d39ac485e091cf0da5c6e694dc3dcaff"
   integrity sha1-kl0mAdOaxIXgkc8NpcbmlNw9yv8=
-
-reselect@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/reselect/-/reselect-4.0.0.tgz#f2529830e5d3d0e021408b246a206ef4ea4437f7"
-  integrity sha512-qUgANli03jjAyGlnbYVAV5vvnOmJnODyABz51RdBN7M4WaVu8mecZWgyQNkG8Yqe3KRGRt0l4K4B3XVEULC4CA==
 
 resolve-cwd@^2.0.0:
   version "2.0.0"
