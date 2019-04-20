@@ -1,5 +1,5 @@
 import { createSelector } from "reselect";
-
+import createCachedSelector from 're-reselect'; 
 import { initialCompanies } from "./data";
 import { getContacts } from "./contacts";
 
@@ -20,20 +20,20 @@ const getCompaniesDict = createSelector(
 
 const pickOfficePhone = phones => phones.find(phone => phone.charAt(0) === 1) || phones[0] || null;
 
-export const getCompanyById = createSelector(
+export const getCompanyById = createCachedSelector(
   [getCompaniesDict, getCompanyId],
   (companies, id) => ({
     ...companies[id],
     phone: pickOfficePhone(companies[id].phones)
   })
-);
+)(getCompanyId);
 
-export const getCompanyEmployees = createSelector(
+export const getCompanyEmployees = createCachedSelector(
   [getContacts, getCompanyId],
   (contacts, companyId) => contacts.filter(c => c.employer === companyId)
-);
+)(getCompanyId);
 
-export const getCompanyCustomers = createSelector(
+export const getCompanyCustomers = createCachedSelector(
   [getContacts, getCompanyId],
   (contacts, companyId) => contacts.filter(c => c.sellers.includes(companyId))
-);
+)(getCompanyId);

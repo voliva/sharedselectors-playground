@@ -1,15 +1,15 @@
 import { connect } from 'react-redux';
-import { createSelector } from "reselect";
+import createCachedSelector from 're-reselect'; 
 
-import { getCompanyEmployees, getCompanyCustomers } from "../../../companies";
+import { getCompanyId, getCompanyEmployees, getCompanyCustomers } from "../../../companies";
 import CompanyContacts from './CompanyContacts.component';
 
-const selectorCounts = createSelector(
+const selectorCounts = createCachedSelector(
   [getCompanyCustomers, getCompanyEmployees],
   (customers, employees) => ({
     nCustomers: customers.length,
     nEmployees: employees.length
   })
-)
+)(getCompanyId);
 
 export default connect(selectorCounts)(CompanyContacts);
