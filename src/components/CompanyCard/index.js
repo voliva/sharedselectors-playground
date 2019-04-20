@@ -1,1 +1,1 @@
-export { default } from "./CompanyCard.container.js";
+export { default } from "./CompanyCard.js";

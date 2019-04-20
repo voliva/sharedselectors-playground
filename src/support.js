@@ -13,7 +13,7 @@ export const contentChanged = newContent => ({
   payload: newContent
 });
 
-export const support = (state = initialSupport, action) => {
+export default (state = initialSupport, action) => {
   switch (action.type) {
     case "SUBJECT_CHANGED":
       return {

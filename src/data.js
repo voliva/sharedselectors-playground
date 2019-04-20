@@ -8,6 +8,14 @@ export const initialCompanies = {
   ids: []
 };
 
+const getPhoneNumbers = (max = Math.random() * 5) => {
+  const res = [];
+  for (let i = 0.5; i < max; i++) {
+    res.push(faker.phone.phoneNumber());
+  }
+  return res;
+}
+
 for (let i = 0; i < N_COMPANIES; i++) {
   const company = {
     id: faker.random.uuid(),
@@ -18,7 +26,7 @@ for (let i = 0; i < N_COMPANIES; i++) {
     url: Math.random() > 0.3 ? faker.internet.url() : null,
     twitter: Math.random() > 0.6 ? faker.internet.userName() : null,
     facebook: Math.random() > 0.7 ? faker.internet.userName() : null,
-    phone: faker.phone.phoneNumber(),
+    phones: getPhoneNumbers(),
     bitcoin: faker.finance.bitcoinAddress(),
     iban: faker.finance.iban()
   };

@@ -1,18 +1,39 @@
 import { createSelector } from "reselect";
+
 import { initialCompanies } from "./data";
+import { getContacts } from "./contacts";
 
-export const companies = (state = initialCompanies, action) => state;
+export default (state = initialCompanies, action) => state;
 
-const getCompanyState = state => state.companies;
+const getCompanies = state => state.companies;
 export const getCompanyId = (state, props) => props.companyId;
 
 export const getAllCompanyIds = createSelector(
-  getCompanyState,
+  getCompanies,
   companies => companies.ids
 );
 
+const getCompaniesDict = createSelector(
+  getCompanies,
+  companies => companies.byId
+);
+
+const pickOfficePhone = phones => phones.find(phone => phone.charAt(0) === 1) || phones[0] || null;
+
 export const getCompanyById = createSelector(
-  getCompanyState,
-  getCompanyId,
-  (companies, id) => companies.byId[id]
+  [getCompaniesDict, getCompanyId],
+  (companies, id) => ({
+    ...companies[id],
+    phone: pickOfficePhone(companies[id].phones)
+  })
+);
+
+export const getCompanyEmployees = createSelector(
+  [getContacts, getCompanyId],
+  (contacts, companyId) => contacts.filter(c => c.employer === companyId)
+);
+
+export const getCompanyCustomers = createSelector(
+  [getContacts, getCompanyId],
+  (contacts, companyId) => contacts.filter(c => c.sellers.includes(companyId))
 );
