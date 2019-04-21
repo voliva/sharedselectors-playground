@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { getCompanyById } from "../../../companies";
+import { makeGetCompanyById } from "../../../companies";
 import CompanyMessengers from './CompanyMessengers.component';
 
-export default connect(createStructuredSelector({
-  company: getCompanyById
+export default connect(() => createStructuredSelector({
+  company: makeGetCompanyById()
 }))(CompanyMessengers);

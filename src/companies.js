@@ -20,7 +20,7 @@ const getCompaniesDict = createSelector(
 
 const pickOfficePhone = phones => phones.find(phone => phone.charAt(0) === 1) || phones[0] || null;
 
-export const getCompanyById = createSelector(
+export const makeGetCompanyById = () => createSelector(
   [getCompaniesDict, getCompanyId],
   (companies, id) => ({
     ...companies[id],
@@ -28,12 +28,12 @@ export const getCompanyById = createSelector(
   })
 );
 
-export const getCompanyEmployees = createSelector(
+export const makeGetCompanyEmployees = () => createSelector(
   [getContacts, getCompanyId],
   (contacts, companyId) => contacts.filter(c => c.employer === companyId)
 );
 
-export const getCompanyCustomers = createSelector(
+export const makeGetCompanyCustomers = () => createSelector(
   [getContacts, getCompanyId],
   (contacts, companyId) => contacts.filter(c => c.sellers.includes(companyId))
 );
