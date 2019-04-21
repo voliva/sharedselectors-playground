@@ -6,6 +6,7 @@
   "main": "src/index.js",
   "dependencies": {
     "faker": "4.1.0",
+    "re-reselect": "^3.1.0",
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "react-icons": "3.6.1",

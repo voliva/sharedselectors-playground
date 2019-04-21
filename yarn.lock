@@ -8018,6 +8018,11 @@ rc@^1.2.7:
     minimist "^1.2.0"
     strip-json-comments "~2.0.1"
 
+re-reselect@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/re-reselect/-/re-reselect-3.1.0.tgz#937657e0bd90cd5fafca77fa7bd01fe9b2ae9247"
+  integrity sha512-1Dh/EKWarO/SeXZCodZBT2puHZRuZUCngCueisCfggCIg+yldyk/N1PTpCkJW+jiWJX4qJFc6ip5l8wDBRsyaQ==
+
 react-app-polyfill@^0.2.2:
   version "0.2.2"
   resolved "https://registry.yarnpkg.com/react-app-polyfill/-/react-app-polyfill-0.2.2.tgz#a903b61a8bfd9c5e5f16fc63bebe44d6922a44fb"
