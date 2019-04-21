@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { createSelector } from "reselect";
+import { createSelector } from "redux-views";
 
 import { getCompanyEmployees, getCompanyCustomers } from "../../../companies";
 import CompanyContacts from './CompanyContacts.component';

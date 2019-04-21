@@ -1,5 +1,5 @@
 import React from "react";
-import { createStructuredSelector } from "reselect";
+import { createStructuredSelector } from "redux-views";
 import { connect } from "react-redux";
 import { getAllCompanyIds } from "../companies";
 import CompanyCard from "./CompanyCard";
